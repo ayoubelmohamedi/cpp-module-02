@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/13 22:26:24 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/13 22:30:12 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
     Fixed & operator=(const Fixed & other);
     
     float toFloat( void ) const;
+    int toInt( void ) const;
     int getRawBits( void ) const;
     void setRawBits( int const raw );
 };

@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/13 22:28:05 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/13 22:32:43 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ Fixed::~Fixed()
 float Fixed::toFloat( void ) const
 {
     return static_cast<float>(this->rawBits) / (1 << fracBits);
+}
+
+int Fixed::toInt( void ) const
+{
+    return static_cast<int>(this->rawBits >> this->fracBits);  
 }
 
 Fixed::Fixed(const Fixed & other)
