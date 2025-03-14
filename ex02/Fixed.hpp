@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 22:14:20 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 22:21:57 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ public:
     Fixed & operator--();
     // Post-increment  x++
     Fixed & operator++(int);
-    Fixed & operator++(int);
+    Fixed & operator--(int);
     
     float toFloat( void ) const;
     int toInt( void ) const;
