@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 22:36:35 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 22:41:06 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ public:
     Fixed & operator=(const Fixed & other);
 
     // comparison operators 
-    bool operator>(const Fixed& other);
-    bool operator<(const Fixed& other);
-    bool operator>=(const Fixed& other);
-    bool operator<=(const Fixed& other);
-    bool operator==(const Fixed& other);
-    bool operator!=(const Fixed& other); 
+    bool operator>(const Fixed& other) const;
+    bool operator<(const Fixed& other) const;
+    bool operator>=(const Fixed& other) const;
+    bool operator<=(const Fixed& other) const;
+    bool operator==(const Fixed& other) const;
+    bool operator!=(const Fixed& other) const; 
 
     // arithmetic operators  +, -, *, / 
     Fixed operator+(const Fixed & other) const;
