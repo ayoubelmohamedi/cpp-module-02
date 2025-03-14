@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 21:54:22 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 22:30:09 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,35 @@ Fixed Fixed::operator/(const Fixed & other) const
         std::cerr << "Warning: Overflow in division" << std::endl;
     result.setRawBits(static_cast<int>(tmp)); 
     return (result);
+}
+
+// pre-increament ++x
+Fixed & Fixed::operator++()
+{
+    this->setRawBits(this->getRawBits() + 1);
+    return (*this);
+}
+// --x
+Fixed & Fixed::operator--()
+{
+    this->setRawBits(this->getRawBits() - 1);
+    return (*this);
+}
+
+//Post-increment x++
+Fixed & Fixed::operator++(int)
+{
+    Fixed tmp(*this);
+    ++(*this);
+    return (tmp);
+}
+
+//Post-decrement x--
+Fixed & Fixed::operator--(int)
+{
+    Fixed tmp(*this);
+    --(*this);
+    return (tmp);
 }
 
  // Overloading the << operator to insert floating-point representation
