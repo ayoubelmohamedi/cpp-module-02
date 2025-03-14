@@ -6,12 +6,11 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 01:27:43 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 01:28:47 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 const int Fixed::fracBits = 8; 
 
