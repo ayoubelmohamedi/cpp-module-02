@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 22:30:09 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 22:40:14 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,31 +62,30 @@ void Fixed::setRawBits( int const raw )
     this->rawBits = raw;
 }
 
-bool Fixed::operator>(const Fixed& other)
+bool Fixed::operator>(const Fixed& other) const
 {
-    return (this->rawBits < other.getRawBits());
+    return (this->rawBits > other.getRawBits());
 }
-bool Fixed::operator<(const Fixed& other)
+bool Fixed::operator<(const Fixed& other) const
 {
     return (this->rawBits < other.getRawBits());
 }
 
-bool Fixed::operator>=(const Fixed& other)
+bool Fixed::operator>=(const Fixed& other) const
 {
     return (this->rawBits >= other.getRawBits());
 }
-
-bool Fixed::operator<=(const Fixed& other)
+bool Fixed::operator<=(const Fixed& other) const
 {
     return (this->rawBits <= other.getRawBits());
 }
 
-bool Fixed::operator==(const Fixed& other)
+bool Fixed::operator==(const Fixed& other) const
 {
     return (this->rawBits == other.getRawBits());
 }
 
-bool Fixed::operator!=(const Fixed& other)
+bool Fixed::operator!=(const Fixed& other) const
 {
     return (this->rawBits != other.getRawBits());
 }
@@ -173,6 +172,26 @@ Fixed & Fixed::operator--(int)
     Fixed tmp(*this);
     --(*this);
     return (tmp);
+}
+
+// Min function (non-const version)
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+    return (a < b) ? a : b;
+}
+
+// Min function (const version)
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+    return (a < b) ? a : b;
+}
+
+// Max function (non-const version)
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
+    return (a > b) ? a : b;
+}
+
+// Max function (const version)
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
+    return (a > b) ? a : b;
 }
 
  // Overloading the << operator to insert floating-point representation
