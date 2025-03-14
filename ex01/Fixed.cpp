@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 01:28:47 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 01:49:13 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 const int Fixed::fracBits = 8; 
 
-Fixed::Fixed(const int nbr)
+
+Fixed::Fixed()
 {
     std::cout << "Default Constructor called" << std::endl;
+    this->rawBits = 0;
+}
+
+Fixed::Fixed(const int nbr)
+{
+    std::cout << "Int Constructor called" << std::endl;
     this->rawBits = nbr << Fixed::fracBits;
 }
 
 Fixed::Fixed(const float nbr)
 {
-    std::cout << "Default Constructor called" << std::endl;
+    std::cout << "Float Constructor called" << std::endl;
     this->rawBits = static_cast<int>(roundf(nbr * (1 << fracBits)));
 }
 Fixed::~Fixed()
@@ -59,7 +66,7 @@ void Fixed::setRawBits( int const raw )
 
 Fixed & Fixed::operator= (const Fixed& other) 
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
     {
         this->rawBits = other.getRawBits();
