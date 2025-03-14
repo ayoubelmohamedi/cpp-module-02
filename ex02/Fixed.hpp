@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 21:45:32 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 22:14:20 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,19 @@ public:
     bool operator!=(const Fixed& other); 
 
     // arithmetic operators  +, -, *, / 
-
     Fixed operator+(const Fixed & other) const;
     Fixed operator-(const Fixed & other) const;
     Fixed operator*(const Fixed & other) const;
     Fixed operator/(const Fixed & other) const;
 
+    //  increment and decrement operators
+    // Pre-increment  ++x
+    Fixed & operator++();
+    Fixed & operator--();
+    // Post-increment  x++
+    Fixed & operator++(int);
+    Fixed & operator++(int);
+    
     float toFloat( void ) const;
     int toInt( void ) const;
     int getRawBits( void ) const;
