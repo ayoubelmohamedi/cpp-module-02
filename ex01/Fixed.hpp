@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 06:39:22 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 21:57:01 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
     
     //copy assignment constructor 
     Fixed & operator=(const Fixed & other);
- 
+    
     float toFloat( void ) const;
     int toInt( void ) const;
     int getRawBits( void ) const;
