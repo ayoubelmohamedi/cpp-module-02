@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/13 22:32:43 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/14 01:27:43 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,10 @@ Fixed & Fixed::operator= (const Fixed& other)
         this->rawBits = other.getRawBits();
     }
     return (*this);
+}
+
+ // Overloading the << operator to insert floating-point representation
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+    os << obj.toFloat();  
+    return os;
 }
