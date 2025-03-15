@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 22:41:06 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/15 01:35:09 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ public:
 
     //  increment and decrement operators
     // Pre-increment  ++x
-    Fixed & operator++();
-    Fixed & operator--();
+    Fixed operator++();
+    Fixed operator--();
     // Post-increment  x++
-    Fixed & operator++(int);
-    Fixed & operator--(int);
+    Fixed operator++(int);
+    Fixed operator--(int);
 
     // Min functions (non-const and const versions)
     static Fixed& min(Fixed& a, Fixed& b);
