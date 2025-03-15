@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/15 01:36:25 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/15 01:57:31 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,21 @@ const int Fixed::fracBits = 8;
 
 Fixed::Fixed()
 {
-    std::cout << "Default Constructor called" << std::endl;
     this->rawBits = 0;
 }
 
 Fixed::Fixed(const int nbr)
 {
-    std::cout << "Int Constructor called" << std::endl;
     this->rawBits = nbr << Fixed::fracBits;
 }
 
 Fixed::Fixed(const float nbr)
 {
-    std::cout << "Float Constructor called" << std::endl;
     this->rawBits = static_cast<int>(roundf(nbr * (1 << fracBits)));
 }
 Fixed::~Fixed()
 {
-    std::cout << "Deconstructor called" << std::endl; 
+
 }
 
 float Fixed::toFloat( void ) const
@@ -49,7 +46,6 @@ int Fixed::toInt( void ) const
 
 Fixed::Fixed(const Fixed & other)
 {
-    std::cout << "Copy Constructor called" << std::endl;
     *this = other;
 }
 int Fixed::getRawBits( void ) const
@@ -92,7 +88,6 @@ bool Fixed::operator!=(const Fixed& other) const
 
 Fixed & Fixed::operator=(const Fixed& other) 
 {
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
     {
         this->rawBits = other.getRawBits();
