@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:38 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/14 22:40:14 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/15 01:36:25 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ Fixed & Fixed::operator=(const Fixed& other)
 Fixed Fixed::operator+(const Fixed & other) const
 {
     Fixed result;
-    long long tmp = static_cast<long long>(this->getRawBits()) + 
-                static_cast<long long>(other.getRawBits());
+    long tmp = static_cast<long>(this->getRawBits()) + 
+                static_cast<long>(other.getRawBits());
     if (tmp > INT_MAX || tmp < INT_MIN)
         std::cerr << "Warning: Overflow in addition" << std::endl;
     result.setRawBits(static_cast<int>(tmp)); 
@@ -114,8 +114,8 @@ Fixed Fixed::operator+(const Fixed & other) const
 Fixed Fixed::operator-(const Fixed & other) const
 {
     Fixed result;
-    long long tmp = static_cast<long long>(this->getRawBits()) - 
-                static_cast<long long>(other.getRawBits());
+    long tmp = static_cast<long>(this->getRawBits()) - 
+                static_cast<long>(other.getRawBits());
     if (tmp > INT_MAX || tmp < INT_MIN)
         std::cerr << "Warning: Overflow in addition" << std::endl;
     result.setRawBits(static_cast<int>(tmp)); 
@@ -125,7 +125,7 @@ Fixed Fixed::operator-(const Fixed & other) const
 Fixed Fixed::operator*(const Fixed & other) const
 {
     Fixed result;
-    long long tmp = static_cast<long long>(this->getRawBits()) * static_cast<long long>(other.getRawBits()); 
+    long tmp = static_cast<long>(this->getRawBits()) * static_cast<long>(other.getRawBits()); 
     if (tmp > INT_MAX || tmp < INT_MIN)
         std::cerr << "Warning: Overflow in multiplication" << std::endl; 
     result.setRawBits(static_cast<int>(tmp >> this->fracBits)); 
@@ -138,7 +138,7 @@ Fixed Fixed::operator/(const Fixed & other) const
 
     if (other.getRawBits() == 0)
         throw std::runtime_error("Division by zero!");
-    long long tmp = static_cast<long long>(this->getRawBits() << fracBits) / static_cast<long long>(other.getRawBits()); 
+    long tmp = static_cast<long>(this->getRawBits() << fracBits) / static_cast<long>(other.getRawBits()); 
     if (tmp > INT_MAX || tmp < INT_MIN)
         std::cerr << "Warning: Overflow in division" << std::endl;
     result.setRawBits(static_cast<int>(tmp)); 
@@ -146,20 +146,20 @@ Fixed Fixed::operator/(const Fixed & other) const
 }
 
 // pre-increament ++x
-Fixed & Fixed::operator++()
+Fixed Fixed::operator++()
 {
     this->setRawBits(this->getRawBits() + 1);
     return (*this);
 }
 // --x
-Fixed & Fixed::operator--()
+Fixed Fixed::operator--()
 {
     this->setRawBits(this->getRawBits() - 1);
     return (*this);
 }
 
 //Post-increment x++
-Fixed & Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
     Fixed tmp(*this);
     ++(*this);
@@ -167,7 +167,7 @@ Fixed & Fixed::operator++(int)
 }
 
 //Post-decrement x--
-Fixed & Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
     Fixed tmp(*this);
     --(*this);
