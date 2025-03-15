@@ -6,7 +6,7 @@
 /*   By: macbookpro <macbookpro@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:34 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/15 03:20:44 by macbookpro       ###   ########.fr       */
+/*   Updated: 2025/03/15 04:00:38 by macbookpro       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Point {
     
     public:
         Point() : x(0), y(0) {};
-        Point(const Fixed x, const Fixed y) : x(x), y(y) {};
+        Point(const float x, const float y) : x(x), y(y) {};
         Point(const Point& other) : x(other.x), y(other.y) {};
         ~Point() {};
         
