@@ -6,7 +6,7 @@
 /*   By: ael-moha <ael-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 19:43:36 by ael-moha          #+#    #+#             */
-/*   Updated: 2025/03/21 22:38:46 by ael-moha         ###   ########.fr       */
+/*   Updated: 2025/03/21 23:10:12 by ael-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <cmath> 
+#include <climits>
 
 class Fixed {
 
